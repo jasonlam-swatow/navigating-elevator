@@ -1,0 +1,128 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-size: 12px;
+	line-height: 1.7;
+}
+h1, h2 {
+	font-family: 'microsoft yahei';
+}
+li {
+	list-style: none;
+}
+.fixed-bar {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	background-color: #ed5759;
+	padding: 5px 10px;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #999;
+}
+.fixed-bar h1 {
+	color: #fff;
+}
+#content {
+	width: 900px;
+	margin: 0 auto;
+	padding: 71px 20px 0 20px;
+}
+#content .item {
+	padding: 20px;	
+	margin-bottom: 20px;
+	border: 1px dotted #ed5759;
+}
+#content .item h2 {
+	font-size: 22px;
+	font-weight: bold;
+	border-bottom: 2px solid #ed5759;
+	margin-bottom: 10px;
+}
+#content .item li {
+	display: inline;
+	margin-right: 10px;
+}
+#content .item li a img {
+	width: 200px;
+	height: 250px;
+	border: none;
+}
+#elevator {
+	position: fixed;
+	top: 150px;
+	left: 50%;
+	bottom: 100px;
+	margin-left: 450px;
+	width: 38px;
+}
+#elevator ul li {
+	margin-top: 5px;
+}
+#elevator ul li a {
+	display: block;
+	background-image: url(../img/backpanel.png);
+	background-color: #aaa;
+	background-repeat: no-repeat;
+	padding: 5px 0 0 7px;
+	color: #ed5759;
+	height: 31px;
+	font-size: 12px;
+	/* font-weight: bold; */
+	color: #333;
+	/* width: 70px; */
+	border: 1px solid #dedede;
+	line-height: 1000px;
+	/* line-height: 50px; */
+	text-decoration: none;
+	/* text-align: center;
+	border-top: 1px solid #e5e5e5; */
+	overflow: hidden;
+}
+#elevator .floor-1 {
+	background-position: 0 0;
+}
+#elevator .floor-2 {
+	background-position: 0 -55px;
+}
+#elevator .floor-3 {
+	background-position: 0 -165px;
+}
+#elevator .floor-4 {
+	background-position: 0 -330px;
+}
+#elevator .floor-5 {
+	background-position: 0 -220px;
+}
+#elevator .floor-6 {
+	background-position: 0 -275px;
+}
+#elevator .floor-0 {
+	background-position: 0 -552px;
+	display: none;
+}
+#elevator ul li a:hover,
+#elevator ul li a.current {
+	color: #ed5759;
+	background-image: none;
+	background-color: #fdeeee;
+	border: 1px solid #ed5759;
+	line-height: 13px;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+/* hack for ie6 */
+* html, * html body {
+	background-image: url(about:blank);
+	background-attachment: fixed;
+}
+* html #elevator {
+	position: absolute;
+	bottom: auto;
+	top: expression(100+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');
+}
